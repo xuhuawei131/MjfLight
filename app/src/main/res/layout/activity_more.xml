@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/led_rollbg"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layout_sos"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:layout_marginTop="20dip"
+        android:background="@drawable/setting_button_top">
+
+        <TextView
+            android:id="@+id/text_sos"
+            style="@style/pushsettingbar"
+            android:text="SOS" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_police"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:background="@drawable/setting_button_mid">
+
+        <TextView
+            android:id="@+id/text_plice"
+            style="@style/pushsettingbar"
+            android:text="警示灯" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_led"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:background="@drawable/setting_button_mid">
+
+        <TextView
+            android:id="@+id/text_led"
+            style="@style/pushsettingbar"
+            android:text="LED" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_colorlight"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:background="@drawable/setting_button_bottom">
+
+        <TextView
+            android:id="@+id/text_colorlight"
+            style="@style/pushsettingbar"
+            android:text="屏幕彩灯" />
+    </RelativeLayout>
+
+</LinearLayout>

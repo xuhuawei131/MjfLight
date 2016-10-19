@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/led_rollbg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:gravity="center_vertical" >
+
+        <EditText
+            android:id="@+id/edit_led"
+            android:layout_width="fill_parent"
+            android:layout_height="150dip"
+            android:hint="请输入要显示的文字"
+            android:layout_marginLeft="25dip"
+            android:layout_marginRight="25dip"
+            android:layout_marginTop="15dip"
+            android:padding="10dp"
+            android:background="@drawable/et_bg"
+            android:gravity="top"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/edit_led"
+            android:layout_alignRight="@id/edit_led"
+            android:layout_marginBottom="10dip"
+            android:layout_marginRight="20dip"
+            android:text="30" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@android:color/white"
+        android:gravity="bottom|center_horizontal"
+        android:text="请选择字体大小"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:layout_weight="1"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/led_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/led_minus" />
+
+        <SeekBar
+            android:id="@+id/led_seekBar"
+            android:layout_width="250dip"
+            android:layout_height="wrap_content"
+            android:secondaryProgress="50"
+            android:max="100" />
+        <ImageView
+            android:id="@+id/led_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/led_plus" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:layout_weight="4"
+        android:gravity="center_horizontal" >
+
+        <ImageView
+            android:id="@+id/led_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/led_play" />
+
+        <ImageView
+            android:id="@+id/led_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dip"
+            android:background="@drawable/led_reset" />
+    </LinearLayout>
+
+</LinearLayout>
