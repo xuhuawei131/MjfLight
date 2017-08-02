@@ -1,10 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:id="@+id/mylayout"
-    >
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
-</LinearLayout>
+    <jiayuan.huawei.com.mjflight.ui.customview.RevealLayout
+        android:id="@+id/reveal_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/view_pink"
+            android:background="@color/pink"
+            style="@style/reveal" />
+
+        <View
+            android:id="@+id/view_yellow"
+            android:background="@color/yellow"
+            style="@style/reveal" />
+
+        <View
+            android:id="@+id/view_blue"
+            android:background="@color/blue"
+            style="@style/reveal" />
+
+        <View
+            android:id="@+id/view_green"
+            android:background="@color/green"
+            style="@style/reveal" />
+
+        <View
+            android:id="@+id/view_red"
+            android:background="@color/red"
+            style="@style/reveal" />
+
+        <View
+            android:id="@+id/view_white"
+            android:background="@color/white"
+            style="@style/reveal" />
+    </jiayuan.huawei.com.mjflight.ui.customview.RevealLayout>
+
+    <io.github.francoiscampbell.circlelayout.CircleLayout
+        android:id="@+id/mylayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="20dp"
+        cl:cl_angleOffset="90"
+        cl:cl_centerView="@+id/centerView"
+        cl:cl_direction="clockwise">
+
+        <View
+            android:id="@+id/centerView"
+            style="@style/colorLightView"
+            android:background="@drawable/round_shape_white" />
+
+        <View
+            android:id="@+id/viewGreen"
+            style="@style/colorLightView"
+            android:background="@drawable/round_shape_green" />
+
+        <View
+            android:id="@+id/viewBlue"
+            style="@style/colorLightView"
+            android:background="@drawable/round_shape_blue" />
+
+        <View
+            android:id="@+id/viewRed"
+            style="@style/colorLightView"
+            android:background="@drawable/round_shape_red" />
+
+        <View
+            android:id="@+id/viewYellow"
+            style="@style/colorLightView"
+            android:background="@drawable/round_shape_yellow" />
+
+        <View
+            android:id="@+id/viewPink"
+            style="@style/colorLightView"
+            android:background="@drawable/round_shape_pink" />
+
+    </io.github.francoiscampbell.circlelayout.CircleLayout>
+
+</FrameLayout>

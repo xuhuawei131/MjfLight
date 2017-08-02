@@ -8,10 +8,29 @@ import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.view.WindowManager;
 
+import java.util.Calendar;
+
 /**
  * Created by Administrator on 2016/2/19.
  */
 public class Utils {
+
+    public static String getCurrentTime(){
+        Calendar c = Calendar.getInstance();
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        int minute = c.get(Calendar.MINUTE);
+
+        String hourStr=hour+"";
+        String minuteStr=minute+"";
+        if(hour<10){
+            hourStr="0"+hour;
+        }
+        if(minute<10){
+            minuteStr="0"+minute;
+        }
+        return hourStr+":"+minuteStr;
+    }
+
 
     /**
      * 是否有后置摄像头
@@ -96,8 +115,10 @@ public class Utils {
             }
         }
         return false;
-
     }
+
+
+
     /**
      *
      * 功能描述：

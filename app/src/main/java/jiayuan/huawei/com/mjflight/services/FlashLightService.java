@@ -17,6 +17,8 @@ import com.anthonycr.grant.PermissionsResultAction;
 import jiayuan.huawei.com.mjflight.constants.Constants;
 import jiayuan.huawei.com.mjflight.ui.activity.LockScreenActivity;
 
+import static jiayuan.huawei.com.mjflight.constants.Constants.isLightOn;
+
 public class FlashLightService extends Service {
     private Camera camera;
     private boolean isOpen = false;
@@ -73,6 +75,7 @@ public class FlashLightService extends Service {
                     parameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
                     camera.setParameters(parameters);
                     isOpen = true;
+                    isLightOn=true;
                     sendStatusBroadcast(isOpen);
                 } catch (Exception e) {
                     Intent intent = new Intent(Constants.ACTION_STATUS_CAMERA_ERROR);
@@ -106,6 +109,7 @@ public class FlashLightService extends Service {
                 camera = null;
             }
             isOpen = false;
+            isLightOn=false;
             sendStatusBroadcast(isOpen);
         }
     }

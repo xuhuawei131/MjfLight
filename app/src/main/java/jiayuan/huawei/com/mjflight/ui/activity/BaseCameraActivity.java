@@ -2,6 +2,7 @@ package jiayuan.huawei.com.mjflight.ui.activity;
 
 import android.Manifest;
 import android.content.Intent;
+import android.os.Build;
 import android.widget.ImageView;
 
 import com.anthonycr.grant.PermissionsManager;
@@ -40,6 +41,12 @@ public abstract class BaseCameraActivity extends BaseActivity {
                         switchLight();
                     }
                 });
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        PermissionsManager.getInstance().notifyPermissionsChange(permissions, grantResults);
     }
 
 

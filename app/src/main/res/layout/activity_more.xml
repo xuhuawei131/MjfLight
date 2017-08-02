@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/led_rollbg"
     android:gravity="center"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -42,7 +43,17 @@
             style="@style/pushsettingbar"
             android:text="LED" />
     </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/layout_sound"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:background="@drawable/setting_button_mid">
 
+        <TextView
+            android:id="@+id/text_sound"
+            style="@style/pushsettingbar"
+            android:text="铃声选择" />
+    </RelativeLayout>
     <RelativeLayout
         android:id="@+id/layout_colorlight"
         android:layout_width="fill_parent"

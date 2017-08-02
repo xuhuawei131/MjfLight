@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">金凤手电</string>
-    <string name="tel_husband">给TA打电话</string>
-    <string name="sms_husband">给TA发信息</string>
+    <string name="tel_husband">给Ta打电话</string>
+    <string name="sms_husband">给Ta发信息</string>
+    <string name="sms_husband_location">给Ta发定位信息</string>
+    <string name="update_num">更新Ta号码</string>
     <string name="set_moe">更多</string>
 </resources>

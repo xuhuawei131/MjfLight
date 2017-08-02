@@ -7,6 +7,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import jiayuan.huawei.com.mjflight.utils.StatusBarCompat2;
+
 /**
  * $desc$
  *
@@ -33,7 +35,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         findViewByIds();
         requestService();
     }
-
+    protected void toggleTranslucent(boolean isTranslucent) {
+        if (isTranslucent) {
+            StatusBarCompat2.translucentStatusBar(this);
+        } else {
+            StatusBarCompat2.setStatusBarColor(this, StatusBarCompat2.COLOR_DEFAULT_WHITE);
+        }
+    }
     public void showTost(String text){
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     }

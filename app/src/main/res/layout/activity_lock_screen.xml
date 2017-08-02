@@ -13,6 +13,7 @@
         app:elevation="0dp">
 
         <RelativeLayout
+            android:id="@+id/layout_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@mipmap/background1">
@@ -21,10 +22,20 @@
                 android:id="@+id/image_light"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
                 android:src="@mipmap/mainbutton_off1" />
 
-
+            <TextView
+                android:id="@+id/text_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image_light"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:textColor="@color/green"
+                android:textSize="75sp" />
         </RelativeLayout>
     </android.support.design.widget.AppBarLayout>
 
