@@ -22,7 +22,7 @@ import static jiayuan.huawei.com.mjflight.constants.Constants.isLightOn;
 public class FlashLightService extends Service {
     private Camera camera;
     private boolean isOpen = false;
-
+    private ControlerLightSix mControlerLightSix;
     public boolean isLightOpen() {
         return isOpen;
     }
@@ -35,7 +35,14 @@ public class FlashLightService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        openFlashLight();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            mControlerLightSix=new ControlerLightSix(this);
+            mControlerLightSix.setFlashlight(true);
+        }else{
+            openFlashLight();
+        }
+
+
 
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(Intent.ACTION_SCREEN_ON);
@@ -46,7 +53,11 @@ public class FlashLightService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        closeFlashLight();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            mControlerLightSix.killFlashlight();
+        }else{
+            closeFlashLight();
+        }
         unregisterReceiver(mScreenBroadcastReceiver);
     }
 

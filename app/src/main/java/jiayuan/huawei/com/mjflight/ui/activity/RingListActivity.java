@@ -21,6 +21,6 @@ public class RingListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ring_list);
 
         listview=(ListView)findViewById(R.id.listview);
-        adapter=new RingAdapter(this,)
+//        adapter=new RingAdapter(this,)
     }
 }
