@@ -23,9 +23,9 @@ public class LedTextView extends TextView implements OnClickListener {
 	public boolean isStarting = false;
 	private Paint paint = null;
 	private String text = "";
-
+	private int incream=5;
 	public LedTextView(Context context, AttributeSet attrs, int defStyle) {
-		super(context, attrs, defStyle);
+		super(context, attrs);
 		initView();
 	}
 
@@ -37,6 +37,16 @@ public class LedTextView extends TextView implements OnClickListener {
 	public LedTextView(Context context) {
 		super(context);
 		initView();
+	}
+
+	public void setSpeedAdd(boolean isAdd){
+		if (isAdd){
+			this.incream++;
+		}else{
+			if (incream>5){
+				incream--;
+			}
+		}
 	}
 
 	private void initView() {
@@ -135,11 +145,16 @@ public class LedTextView extends TextView implements OnClickListener {
 
 	@Override
 	public void onDraw(Canvas canvas) {
+//		int availableHeight = getHeight() - this.getPaddingTop() - this.getPaddingBottom();
+
+//		float paintHeight=paint.descent()-paint.ascent();
+//		float viewHeight=getHeight();
+//		y=(viewHeight-paintHeight)/2;
 		canvas.drawText(text, temp_view_plus_text_length - step, y, paint);
 		if (!isStarting) {
 			return;
 		}
-		step += 5;
+		step += incream;
 		if (step > temp_view_plus_two_text_length)
 			step = textLength;
 		invalidate();
