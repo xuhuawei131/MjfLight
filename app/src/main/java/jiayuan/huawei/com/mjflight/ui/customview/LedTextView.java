@@ -4,9 +4,11 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
@@ -41,12 +43,13 @@ public class LedTextView extends TextView implements OnClickListener {
 
 	public void setSpeedAdd(boolean isAdd){
 		if (isAdd){
-			this.incream++;
+			incream++;
 		}else{
 			if (incream>5){
 				incream--;
 			}
 		}
+		Log.v("xhw","y="+y);
 	}
 
 	private void initView() {
@@ -69,7 +72,7 @@ public class LedTextView extends TextView implements OnClickListener {
 		step = textLength;
 		temp_view_plus_text_length = viewWidth + textLength;
 		temp_view_plus_two_text_length = viewWidth + textLength * 2;
-		y = getTextSize() + getPaddingTop();
+//		y = getTextSize() + getPaddingTop();
 	}
 
 	@Override
@@ -147,9 +150,16 @@ public class LedTextView extends TextView implements OnClickListener {
 	public void onDraw(Canvas canvas) {
 //		int availableHeight = getHeight() - this.getPaddingTop() - this.getPaddingBottom();
 
+
+		Rect rect = new Rect();
+		paint.getTextBounds(text,0,text.length(), rect);
+		int paintHeight = rect.height();
+
+
 //		float paintHeight=paint.descent()-paint.ascent();
-//		float viewHeight=getHeight();
-//		y=(viewHeight-paintHeight)/2;
+		float viewHeight=getHeight();
+		y=(viewHeight-paintHeight)/2+paintHeight-10;
+		;
 		canvas.drawText(text, temp_view_plus_text_length - step, y, paint);
 		if (!isStarting) {
 			return;
