@@ -29,8 +29,7 @@ public class LEDShowActivity extends BaseActivity {
     protected void findViewByIds() {
         auto_scroll = (LedTextView) findViewById(R.id.scroll_view);
         auto_scroll.setText(value);
-        auto_scroll.setTextSize(size);
-        auto_scroll.init(getWindowManager());
+//        auto_scroll.setTextSize(size);
         auto_scroll.startScroll();
 
         View view_left = findViewById(R.id.view_left);
